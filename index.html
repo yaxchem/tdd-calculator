@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="./data.js" defer></script>
+    <script src="./app.js" defer></script>
+    <title>TDD Calculator</title>
+</head>
+
+<body>
+    <h1>Target Delivery Date (TDD) Calculator</h1>
+    <h2>Instructions:</h2>
+    <p>
+        For any Service request in JIRA, you can find the "Request submission date time" in the Details of the task.
+        Enter that date into "Today's date". Then using the "Service Type" dropdown to choose the service type. The
+        resulting target delivery date will be found in the "Target delivery Date" input. You can take that and copy it
+        into the "Due Date" field in the JIRA ticket.
+    </p>
+    <form>
+        <div class="input-group">
+            <label for="request-date">Request's date</label>
+            <input type="date" name="request-date" id="request-date">
+        </div>
+
+        <div class="input-group">
+            <label for="service-type">Service type</label>
+            <select name="service-type" id="service-type">
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label for="tdd">Target Delivery Date</label>
+            <input type="date" name="tdd" id="tdd" readonly>
+            <button id="copy-date">Copy date to clipboard</button>
+            <div class="sr-only" id="updated-date" role="region" aria-live="polite"></div>
+        </div>
+
+        <div class="input-group">
+            <label for="curation-message">Curation Message</label>
+            <textarea name="curation-message" id="curation-message" cols="50" rows="7"></textarea>
+            <button id="copy-message">Copy message to clipboard</button>
+        </div>
+
+        <h3>For Full Manual Evaluations:</h3>
+        <p>
+            This field is only used when you have a Full Manual Evaluation. Since a Full Manual Evaluation can be any
+            range of pages, the date is updated dynamically. If this value is 10, the date for FME and Evaluations
+            should be the same.
+        </p>
+        <div class="input-group">
+            <label for="pages-no">Number of Pages</label>
+            <input type="number" name="pages-no" id="pages-no" value="10">
+        </div>
+    </form>
+</body>
+
+</html>
