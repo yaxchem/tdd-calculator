@@ -37,8 +37,8 @@ function updateTddInputAlert() {
 
 function updateCurationMessage(tddDate) {
     const message = 
-    `We wanted to share an update on your service request. The estimated Target Delivery Date is currently **${tddDate}**.
-We appreciate your patience and will continue to keep you informed as your request is fulfilled.
+    `Based on preliminary scoping and estimated capacity, our **target** delivery date is **${tddDate}**.
+Please note, this request is currently being resourced, and a confirmed delivery date will be shared with you once resources are assigned.
 Thank you for your continued partnership.
 Best regards,`;
     curationMessageInput.value = message
@@ -142,3 +142,4 @@ async function copyText(text) {
     await navigator.clipboard.writeText(text);
     return;
 }
+
